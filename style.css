@@ -66,10 +66,7 @@ main{
 
 .prep{
     background: var(--bg-prep-color);
-    padding-left: 2em;
     padding: 1.4em 2em .3em;
-    padding-right: 2em;
-    padding-top: 1.4em;
     border-radius: 1em;
     margin-top: 2rem;
     line-height: 2em;
@@ -175,7 +172,7 @@ hr{
     border-bottom: none;
 }
 
-@media (max-width: 35rem) {
+@media (max-width: 40rem) {
     .recipe_img{
         border-radius: 0;
         width: calc(100% + 5rem);
