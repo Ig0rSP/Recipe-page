@@ -67,6 +67,7 @@ main{
 .prep{
     background: var(--bg-prep-color);
     padding-left: 2em;
+    padding: 1.4em 2em .3em;
     padding-right: 2em;
     padding-top: 1.4em;
     border-radius: 1em;
@@ -79,23 +80,31 @@ main{
     font-weight: 600;
     font-size: 20px;
     margin: 0;
-    margin-bottom: -1.5em;
-}
-
-li{
-    padding-left: 1.3em;
 }
 
 .prep__list{
-    padding: 1.2em;
+    padding: 0;
+    line-height: 1.4em;
+    list-style: none;
 }
 
 .prep__list li{
-    &::marker{    
+    display: flex;
+    margin-block-start: .5em;
+
+    &::before{
+        content: "•";
         color: var(--title-prep-color);
-        font-size: .7em;
+        font-size: 1.2em;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        margin-right: 1.5em;
+        margin-left: .3em;
     }
+
 }
+
 
 hr{
     margin-top: 2em;
@@ -114,15 +123,22 @@ hr{
 }
 
 .ingredients {
-    list-style: square;
-    padding-left: 1.3em;
-    line-height: 1.9em;
+    list-style: none;
+    line-height: 1.4em;
+    padding: 0;
 }
 
 .ingredients li{
-    &::marker{
-        font-size: .7em;
+    display: flex;
+    margin-block-end: .65em;
+    &::before{
+        content: "▪";
         color: var(--title-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: .5em;
+        margin-right: 1.5em;
     }
 }
 
@@ -131,8 +147,8 @@ hr{
 }
 
 .instructions li{
-    margin-bottom: .5em;
-
+    margin-block-start: .5em;
+    padding-left: .9em;
     &::marker{
         font-weight: 600;
         color: var(--title-color);
@@ -159,7 +175,7 @@ hr{
     border-bottom: none;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 35rem) {
     .recipe_img{
         border-radius: 0;
         width: calc(100% + 5rem);
