@@ -10,6 +10,14 @@
   font-style: normal;
 }
 
+body{
+    min-width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 html{
     --bg-color: hsl(30, 54%, 90%);
     --bg-prep-color: hsl(330, 100%, 98%);
@@ -21,7 +29,6 @@ html{
     --separator-color: hsl(30, 18%, 87%);
     --mx-width: 40rem;
     
-    height: 100%;
     background: var(--bg-color);
     display: flex;
     justify-content: center;
@@ -31,16 +38,21 @@ html{
 }
 
 main{
+    display: block;
     background: var(--bg-main-color);
+    margin: 0;
     padding: 2.5rem;
     border-radius: 1.6em;
-    width: min-content;
+    width: var(--mx-width);
     font-family: 'Outfit';
 }
 
 .recipe_img{
+    object-fit: cover;
     width: var(--mx-width);
+    padding: 0;
     border-radius: 1em;
+    margin-bottom: .5em;
 }
 
 .nombreReceta{
@@ -48,7 +60,8 @@ main{
     font-weight: 400;
     font-size: 2.45em;
     color: var(--prpl-title-color);
-    margin-bottom: .85em;
+    margin-bottom: .6em;
+    line-height: 1em;
 }
 
 .prep{
@@ -144,4 +157,22 @@ hr{
 
 .nutrition tr:last-child td{
     border-bottom: none;
+}
+
+@media (max-width: 50rem) {
+    .recipe_img{
+        border-radius: 0;
+        width: calc(100% + 5rem);
+        position: relative;
+        margin: -2.5rem -2.5rem 0.5em;
+    }
+
+    main{
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .nutrition{
+        width: 100%;
+    }
 }
